@@ -11,12 +11,8 @@
     </body>
     </html>
 <?php 
-    $ciclo="DAW";
-    $modulo="DWES";
-    $imagen="img.jpg";
-    echo("ciclo: ".$ciclo);
-    echo("modulo: ".$modulo);
-    echo("<img href=\" ".$imagen." \" >");
+    $radio=5;
+    echo("pi * radio= ".pi()*$radio);
 ?>
 
     
