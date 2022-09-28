@@ -1,9 +1,4 @@
 
-<?php
-/** Tablas de multiplicar del 1 al 10. Aplicar estilos en filas/columnas */
-echo ("<br>");
-echo ("<a href=\"https://github.com/alexsrk09/DWES\">github</a>");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,3 +26,8 @@ echo ("<a href=\"https://github.com/alexsrk09/DWES\">github</a>");
     </table>
 </body>
 </html>
+<?php
+/** Tablas de multiplicar del 1 al 10. Aplicar estilos en filas/columnas */
+echo ("<br>");
+echo ("<a href=\"https://github.com/alexsrk09/DWES/blob/main/unit3/bucles/bucles3.php\">github</a>");
+?>
