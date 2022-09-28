@@ -15,12 +15,14 @@ echo ("<a href=\"https://github.com/alexsrk09/DWES\">github</a>");
 <body>
     <table>
         <?php
-            for ($i = 1; $i <= 10; $i++){
+        $desde=1;
+        $hasta=10;
+            for ($i = $desde; $i <= $hasta; $i++){
                 echo("<tr>");
-                if($i!=1)echo ("<td style=\" background-color:red;\">".$i."</td>");
+                if($i!=$desde)echo ("<td style=\" background-color:red;\">".$i."</td>");
                 else echo ("<td style=\" background-color:red;\">"."x"."</td>");
-                for ($j = 1; $j <= 10; $j++){
-                    if($i!=1) echo ("<td>".$i*$j."</td>");
+                for ($j = $desde; $j <= $hasta; $j++){
+                    if($i!=$desde) echo ("<td>".$i*$j."</td>");
                     else echo ("<td style=\" background-color:red;\">".$i*$j."</td>");
                 }
                 echo("</tr>");
