@@ -135,7 +135,7 @@
             "yellowgreen" => "#9ACD32"
         );
     
-        $hasta=10;
+        $hasta=20;
             for ($i = 1; $i <= $hasta; $i++){
                 echo("<tr>");
                 for ($j = 1; $j <= $hasta; $j++){
@@ -152,3 +152,6 @@
 echo ("<br>");
 echo ("<a href=\"https://github.com/alexsrk09/DWES/blob/main/unit3/bucles/bucles4.php\">github</a>");
 ?>
+<script type="text/javascript">
+    location.reload();
+</script>

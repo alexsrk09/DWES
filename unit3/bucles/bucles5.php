@@ -74,3 +74,4 @@ echo "</tr>";
 echo ("<br>");
 echo ("<a href=\"https://github.com/alexsrk09/DWES/blob/main/unit3/bucles/bucles5.php\">github</a>");
 ?>
+<script>location.reload();</script>
