@@ -49,7 +49,7 @@ for ($i = 0; $i < $Week; $i++) {
     echo "<td></td>";
 }
 while ($dia <= $diasMes) {
-    if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos)) {
+    if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos) || ($dia + $Week) % 7 == 0) {
         echo "<td style='color:red'>" . $dia . "</td>";
     }
     else {
