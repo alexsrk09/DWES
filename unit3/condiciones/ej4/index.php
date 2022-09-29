@@ -14,5 +14,5 @@ if($fechaHoy>$Spring && $fechaHoy<=$Summer){echo "<img src=\"spring.jpg\" alt=\"
 if($fechaHoy>$Summer && $fechaHoy<=$Fall){echo "<img src=\"summer.jpg\" alt=\"Summer\">";}
 if($fechaHoy>$Fall && $fechaHoy<=$Winter){echo "<img src=\"fall.jpg\" alt=\"Fall\">";}
 echo ("<br><br>");
-echo ("<a href=\"https://github.com/alexsrk09/DWES/blob/main/unit3/bucles/bucles3.php\">github</a>");
+echo ("<a href=\"https://github.com/alexsrk09/DWES/tree/main/unit3/condiciones/ej4\">github</a>");
 ?>

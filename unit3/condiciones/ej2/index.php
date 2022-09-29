@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <a href="https://github.com/alexsrk09/DWES">github</a>
-    <br>
-</body>
-
-</html>
 <?php
 $monthsArray = [null, "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 $month = 2;
@@ -60,4 +45,6 @@ switch ($monthsArray[$month]) {
         echo ("mes erróneo");
         break;
 }
+echo ("<br><br>");
+echo ("<a href=\"https://github.com/alexsrk09/DWES/tree/main/unit3/condiciones/ej2\">github</a>");
 ?>
