@@ -121,46 +121,49 @@ $ficheros = array(
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body class="row">
-    <object class="col">
-        <div class="card" style="width: 20rem;">
+<body>
+    <div class="row">
+    <div class="col">
+    <object>
+        <div class="card" style="width: 20rem; margin-bottom:4%;margin-left:4%">
             <div class="card-body">
                 <h5 class="card-title">unit 0</h5>
                 <?php
                     foreach ($ficheros["unit0"] as $ejercicio => $datos) {
                         echo "<h5>$datos[titulo]</h5>";
                         echo "<p>$datos[descripcion]</p>";
-                        echo "<a class=\"btn btn-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
 }?>
             </div>
         </div>
     </object>
-    <object class="col">
-        <div class="card" style="width: 20rem;">
+    <object>
+        <div class="card" style="width: 20rem; margin-bottom:4%; margin-left:4%">
             <div class="card-body">
                 <h5 class="card-title">unit 1</h5>
                 <?php
                     foreach ($ficheros["unit1"] as $ejercicio => $datos) {
                         echo "<h5>$datos[titulo]</h5>";
                         echo "<p>$datos[descripcion]</p>";
-                        echo "<a class=\"btn btn-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
 }?>
             </div>
         </div>
     </object>
-    <object class="col">
-        <div class="card" style="width: 20rem;">
+    <object>
+        <div class="card" style="width: 20rem; margin-bottom:4% ;margin-left:4%">
             <div class="card-body">
                 <h5 class="card-title">unit 2</h5>
                 <?php
                     foreach ($ficheros["unit2"] as $ejercicio => $datos) {
                         echo "<h5>$datos[titulo]</h5>";
                         echo "<p>$datos[descripcion]</p>";
-                        echo "<a class=\"btn btn-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
 }?>
             </div>
         </div>
     </object>
+    </div>
     <object class="col">
         <div class="card" style="width: 20rem;">
             <div class="card-body">
@@ -169,24 +172,21 @@ $ficheros = array(
                     foreach ($ficheros["unit3"] as $ejercicio => $datos) {
                         echo "<h5>$datos[titulo]</h5>";
                         echo "<p>$datos[descripcion]</p>";
-                        echo "<a class=\"btn btn-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
 }?>
             </div>
         </div>
     </object>
-    <?php
-?>
+    
+</div>
 </body>
 <footer>
+
+<?php
+echo ("<br>");
+echo ("<a href=\"https://github.com/alexsrk09/DWES\" class=\"btn btn-outline-primary\">github</a>");
+?>
+
 </footer>
 
 </html>
-<?php
-echo ("<br>");
-echo ("<a href=\"https://github.com/alexsrk09/DWES\">github</a>");
-?>
-<style>
-    object {
-        display: flex;
-    }
-</style>
