@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <table>
         <?php
@@ -31,15 +32,15 @@ $festivosFeria = array(
 $festivosLocales = array(
     mktime(0, 0, 0, 6, 8, $añoActual), //fuensanta
     mktime(0, 0, 0, 10, 24, $añoActual), //san Rafael
-); 
+);
 $festivosAndalucia = array(
     mktime(0, 0, 0, 2, 28, $añoActual), //dia de Andalucía
-    easter_date( $year = date("Y"),  $method = CAL_EASTER_DEFAULT)-86400*3,// semana santa
+    easter_date($year = date("Y"), $method = CAL_EASTER_DEFAULT) - 86400 * 3, // semana santa
 );
 $festivosNacionales = array(
     mktime(0, 0, 0, 1, 1, $añoActual), //Año Nuevo
     mktime(0, 0, 0, 1, 6, $añoActual), //Epifanía
-    easter_date( $year = date("Y"),  $method = CAL_EASTER_DEFAULT)-86400*4,// semana santa
+    easter_date($year = date("Y"), $method = CAL_EASTER_DEFAULT) - 86400 * 4, // semana santa
     mktime(0, 0, 0, 5, 1, $añoActual), //Día del Trabajo
     mktime(0, 0, 0, 8, 15, $añoActual), //Asunción de la Virgen
     mktime(0, 0, 0, 10, 12, $añoActual), //Fiesta Nacional de España
@@ -111,27 +112,34 @@ echo ("<a href=\"https://github.com/alexsrk09/DWES/blob/main/unit3/bucles/bucles
     table {
         border-collapse: collapse;
     }
+
     td,
     th {
         border: 1px solid black;
         padding: 5px;
     }
-    .festivosCumple{
-        background-color:blue;
+
+    .festivosCumple {
+        background-color: blue;
     }
-    .festivosAndalucia{
-        background-color:Darkred;
+
+    .festivosAndalucia {
+        background-color: Darkred;
     }
-    .festivosNacionales{
-        background-color:red;
+
+    .festivosNacionales {
+        background-color: red;
     }
-    .festivosLocales{
-        background-color:darksalmon;
+
+    .festivosLocales {
+        background-color: darksalmon;
     }
-    .festivosFeria{
-        background-color:yellow;
+
+    .festivosFeria {
+        background-color: yellow;
     }
-    .dia{
-        background-color:lightgreen;
+
+    .dia {
+        background-color: lightgreen;
     }
 </style>
