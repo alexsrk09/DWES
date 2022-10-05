@@ -13,6 +13,7 @@
 // Dado el mes y año almacenados en variables, escribir un programa que muestre el calendario mensual
 // correspondiente. Marcar el día actual en verde y los festivos en rojo.
 //@author: Alejandro Jiménez
+
 $diaActual = date("j"); //Devuelve el día del mes actual
 $mesActual = date("n"); //Devuelve el mes actual
 $añoActual = date("Y"); //Devuelve el año actual
@@ -87,6 +88,17 @@ while ($dia <= $diasMes) {
 }
 echo "</tr>";
 ?>
+    </table>
+    <br><br>
+    <table>
+        <tr>
+            <td class="festivosCumple">cumpleaños</td>
+            <td class="festivosAndalucia">festivos Andalucia</td>
+            <td class="festivosNacionales">festivos Nacionales</td>
+            <td class="festivosLocales">festivos Locales</td>
+            <td class="festivosFeria">Feria</td>
+            <td class="dia">Dia de hoy</td>
+        </tr>
     </table>
 </body>
 
