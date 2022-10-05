@@ -1,41 +1,44 @@
 <?php
-// Dado el mes y año almacenados en variables, escribir un programa que muestre el calendario mensual
-// correspondiente. Marcar el día actual en verde y los festivos en rojo.
-//@author: Alejandro Jiménez
+/**   Dado el mes y año almacenados en variables, escribir un programa que muestre el calendario mensual
+ *  correspondiente. Marcar el día actual en verde y los festivos en rojo.
+ *  @author: Alejandro Jiménez 
+ */
 
 $diaActual = date("j"); //Devuelve el día del mes actual
 $mesActual = date("n"); //Devuelve el mes actual
 $añoActual = date("Y"); //Devuelve el año actual
-$festivosCumple = array(mktime(0, 0, 0, 10, 9, $añoActual)); //Cumpleaños
-$festivosFeria = array(
-    mktime(0, 0, 0, 5, 25, $añoActual), //feria
-    mktime(0, 0, 0, 26, 26, $añoActual), //feria
-    mktime(0, 0, 0, 5, 27, $añoActual), //feria
-    mktime(0, 0, 0, 5, 28, $añoActual), //feria
-    mktime(0, 0, 0, 5, 29, $añoActual), //feria
-    mktime(0, 0, 0, 5, 30, $añoActual), //feria
-    mktime(0, 0, 0, 5, 31, $añoActual), //feria
-    mktime(0, 0, 0, 6, 1, $añoActual), //feria
-);
-$festivosLocales = array(
-    mktime(0, 0, 0, 6, 8, $añoActual), //fuensanta
-    mktime(0, 0, 0, 10, 24, $añoActual), //san Rafael
-);
-$festivosAndalucia = array(
-    mktime(0, 0, 0, 2, 28, $añoActual), //dia de Andalucía
-    easter_date($year = date("Y"), $method = CAL_EASTER_DEFAULT) - 86400 * 3, // semana santa
-);
-$festivosNacionales = array(
-    mktime(0, 0, 0, 1, 1, $añoActual), //Año Nuevo
-    mktime(0, 0, 0, 1, 6, $añoActual), //Epifanía
-    easter_date($year = date("Y"), $method = CAL_EASTER_DEFAULT) - 86400 * 4, // semana santa
-    mktime(0, 0, 0, 5, 1, $añoActual), //Día del Trabajo
-    mktime(0, 0, 0, 8, 15, $añoActual), //Asunción de la Virgen
-    mktime(0, 0, 0, 10, 12, $añoActual), //Fiesta Nacional de España
-    mktime(0, 0, 0, 11, 1, $añoActual), //Todos los Santos
-    mktime(0, 0, 0, 12, 6, $añoActual), //Día de la Constitución
-    mktime(0, 0, 0, 12, 8, $añoActual), //Inmaculada Concepción
-    mktime(0, 0, 0, 12, 25, $añoActual), //Navidad
+$festivos = array(
+    'festivosCumple' => array('cumpleanios'=>mktime(0, 0, 0, 10, 9, $añoActual)), //Cumpleaños
+    'festivosFeria' => array(
+            'feria0'=>mktime(0, 0, 0, 5, 25, $añoActual), //feria
+            'feria1'=>mktime(0, 0, 0, 26, 26, $añoActual), //feria
+            'feria2'=>mktime(0, 0, 0, 5, 27, $añoActual), //feria
+            'feria3'=>mktime(0, 0, 0, 5, 28, $añoActual), //feria
+            'feria4'=>mktime(0, 0, 0, 5, 29, $añoActual), //feria
+            'feria5'=>mktime(0, 0, 0, 5, 30, $añoActual), //feria
+            'feria6'=>mktime(0, 0, 0, 5, 31, $añoActual), //feria
+            'feria7'=>mktime(0, 0, 0, 6, 1, $añoActual), //feria
+    ),
+    'festivosLocales'=> array(
+            'fuensanta'=>mktime(0, 0, 0, 6, 8, $añoActual), //fuensanta
+            'sanRafael'=>mktime(0, 0, 0, 10, 24, $añoActual), //san Rafael
+    ),
+    'festivosAndalucia'=>array(
+           'diaAndalucía'=> mktime(0, 0, 0, 2, 28, $añoActual), //dia de Andalucía
+           'semanaSanta0'=>easter_date($year = date("Y"), $method = CAL_EASTER_DEFAULT) - 86400 * 3, // semana santa
+    ),
+    'festivosNacionales'=>array(
+            'anioNuevo'=>mktime(0, 0, 0, 1, 1, $añoActual), //Año Nuevo
+            'epifania'=>mktime(0, 0, 0, 1, 6, $añoActual), //Epifanía
+            'semanaSanta1'=>easter_date($year = date("Y"), $method = CAL_EASTER_DEFAULT) - 86400 * 4, // semana santa
+            'diaTrabajo'=>mktime(0, 0, 0, 5, 1, $añoActual), //Día del Trabajo
+            'asuncion'=>mktime(0, 0, 0, 8, 15, $añoActual), //Asunción de la Virgen
+            'fiestaNacional'=>mktime(0, 0, 0, 10, 12, $añoActual), //Fiesta Nacional de España
+            'todosSantos'=>mktime(0, 0, 0, 11, 1, $añoActual), //Todos los Santos
+            'constitucion'=>mktime(0, 0, 0, 12, 6, $añoActual), //Día de la Constitución
+            'inmaculadaConcepción'=>mktime(0, 0, 0, 12, 8, $añoActual), //Inmaculada Concepción
+            'navidad'=>mktime(0, 0, 0, 12, 25, $añoActual), //Navidad
+        )
 );
 $dias = array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"); //array con los dias de la semana
 $diasMes = cal_days_in_month(CAL_GREGORIAN, $mesActual, $añoActual); //devuelve el número de días del mes
@@ -66,18 +69,18 @@ for ($i = 0; $i < $Week; $i++) {
     echo "<td></td>";
 }
 while ($dia <= $diasMes) {
-    if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivosCumple))
+    if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosCumple']))
         echo "<td class='festivosCumple'>" . $dia . "</td>";
-    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivosAndalucia)) {
+    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosAndalucia'])) {
         echo "<td class='festivosAndalucia'>" . $dia . "</td>";
     }
-    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivosNacionales) || ($dia + $Week) % 7 == 0) {
+    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosNacionales']) || ($dia + $Week) % 7 == 0) {
         echo "<td class='festivosNacionales'>" . $dia . "</td>";
     }
-    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivosLocales)) {
+    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosLocales'])) {
         echo "<td class='festivosLocales'>" . $dia . "</td>";
     }
-    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivosFeria)) {
+    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosFeria'])) {
         echo "<td class='festivosFeria'>" . $dia . "</td>";
     }
     else if ($dia == $diaActual) {
