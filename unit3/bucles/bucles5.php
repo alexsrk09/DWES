@@ -37,7 +37,7 @@ $festivos = array(
 );
 $dias = array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"); //array con los dias de la semana
 $diasMes = cal_days_in_month(CAL_GREGORIAN, $mesActual, $añoActual); //devuelve el número de días del mes
-$Week = date("N", mktime(0, 0, 0, $mesActual, 1, $añoActual)); //Devuelve el número del día de la semana del primer día del mes
+$Week = date("N", mktime(0, 0, 0, $mesActual, 1, $añoActual))-1; //Devuelve el número del día de la semana del primer día del mes
 $dia = 1;
 echo "<tr>";
 for ($i = 0; $i < 7; $i++) {
