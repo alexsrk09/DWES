@@ -62,21 +62,21 @@ for ($i = 0; $i < $Week; $i++) {
 }
 while ($dia <= $diasMes) {
     if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivosCumple))
-        echo "<td style='background-color:blue;'>" . $dia . "</td>";
+        echo "<td class='festivosCumple'>" . $dia . "</td>";
     else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivosAndalucia)) {
-        echo "<td style='color:DarkRed'>" . $dia . "</td>";
+        echo "<td class='festivosAndalucia'>" . $dia . "</td>";
     }
     else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivosNacionales) || ($dia + $Week) % 7 == 0) {
-        echo "<td style='color:red'>" . $dia . "</td>";
+        echo "<td class='festivosNacionales'>" . $dia . "</td>";
     }
     else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivosLocales)) {
-        echo "<td style='color:DarkSalmon'>" . $dia . "</td>";
+        echo "<td class='festivosLocales'>" . $dia . "</td>";
     }
     else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivosFeria)) {
-        echo "<td style='background-color:red;'>" . $dia . "</td>";
+        echo "<td class='festivosFeria'>" . $dia . "</td>";
     }
     else if ($dia == $diaActual) {
-        echo "<td style=\"background-color:green;\">$dia</td>";
+        echo "<td class='dia'>$dia</td>";
     }
     else
         echo "<td>" . $dia . "</td>";
@@ -95,3 +95,31 @@ echo "</tr>";
 echo ("<br>");
 echo ("<a href=\"https://github.com/alexsrk09/DWES/blob/main/unit3/bucles/bucles5.php\">github</a>");
 ?>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    td,
+    th {
+        border: 1px solid black;
+        padding: 5px;
+    }
+    .festivosCumple{
+        background-color:blue;
+    }
+    .festivosAndalucia{
+        background-color:Darkred;
+    }
+    .festivosNacionales{
+        background-color:red;
+    }
+    .festivosLocales{
+        background-color:darksalmon;
+    }
+    .festivosFeria{
+        background-color:yellow;
+    }
+    .dia{
+        background-color:lightgreen;
+    }
+</style>
