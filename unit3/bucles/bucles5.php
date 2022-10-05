@@ -22,7 +22,7 @@
 $diaActual = date("j"); //Devuelve el día del mes actual
 $mesActual = date("n"); //Devuelve el mes actual
 $añoActual = date("Y"); //Devuelve el año actual
-$festivos = array(
+$festivosNacionales = array(
     mktime(0, 0, 0, 1, 1, $añoActual), //Año Nuevo
     mktime(0, 0, 0, 1, 6, $añoActual), //Epifanía
     mktime(0, 0, 0, 4, 9, $añoActual), //Jueves Santo
@@ -49,7 +49,7 @@ for ($i = 0; $i < $Week; $i++) {
     echo "<td></td>";
 }
 while ($dia <= $diasMes) {
-    if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos) || ($dia + $Week) % 7 == 0) {
+    if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivosNacionales) || ($dia + $Week) % 7 == 0) {
         echo "<td style='color:red'>" . $dia . "</td>";
     }
     else {
@@ -74,4 +74,3 @@ echo "</tr>";
 echo ("<br>");
 echo ("<a href=\"https://github.com/alexsrk09/DWES/blob/main/unit3/bucles/bucles5.php\">github</a>");
 ?>
-<script>location.reload();</script>
