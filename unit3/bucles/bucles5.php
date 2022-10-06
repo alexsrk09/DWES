@@ -8,17 +8,6 @@ $diaActual = date("j"); //Devuelve el día del mes actual
 $mesActual = date("n"); //Devuelve el mes actual
 $añoActual = date("Y"); //Devuelve el año actual
 $festivos = array(
-    'festivosCumple' => array('cumpleanios'=>mktime(0, 0, 0, 10, 9, $añoActual)), //Cumpleaños
-    'festivosFeria' => array(
-            'feria0'=>mktime(0, 0, 0, 5, 25, $añoActual), //feria
-            'feria1'=>mktime(0, 0, 0, 26, 26, $añoActual), //feria
-            'feria2'=>mktime(0, 0, 0, 5, 27, $añoActual), //feria
-            'feria3'=>mktime(0, 0, 0, 5, 28, $añoActual), //feria
-            'feria4'=>mktime(0, 0, 0, 5, 29, $añoActual), //feria
-            'feria5'=>mktime(0, 0, 0, 5, 30, $añoActual), //feria
-            'feria6'=>mktime(0, 0, 0, 5, 31, $añoActual), //feria
-            'feria7'=>mktime(0, 0, 0, 6, 1, $añoActual), //feria
-    ),
     'festivosLocales'=> array(
             'fuensanta'=>mktime(0, 0, 0, 6, 8, $añoActual), //fuensanta
             'sanRafael'=>mktime(0, 0, 0, 10, 24, $añoActual), //san Rafael
@@ -69,9 +58,7 @@ for ($i = 0; $i < $Week; $i++) {
     echo "<td></td>";
 }
 while ($dia <= $diasMes) {
-    if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosCumple']))
-        echo "<td class='festivosCumple'>" . $dia . "</td>";
-    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosAndalucia'])) {
+    if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosAndalucia'])) {
         echo "<td class='festivosAndalucia'>" . $dia . "</td>";
     }
     else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosNacionales']) || ($dia + $Week) % 7 == 0) {
@@ -79,9 +66,6 @@ while ($dia <= $diasMes) {
     }
     else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosLocales'])) {
         echo "<td class='festivosLocales'>" . $dia . "</td>";
-    }
-    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosFeria'])) {
-        echo "<td class='festivosFeria'>" . $dia . "</td>";
     }
     else if ($dia == $diaActual) {
         echo "<td class='dia'>$dia</td>";
@@ -99,11 +83,9 @@ echo "</tr>";
     <br><br>
     <table>
         <tr>
-            <td class="festivosCumple">cumpleaños</td>
             <td class="festivosAndalucia">festivos Andalucia</td>
             <td class="festivosNacionales">festivos Nacionales</td>
             <td class="festivosLocales">festivos Locales</td>
-            <td class="festivosFeria">Feria</td>
             <td class="dia">Dia de hoy</td>
         </tr>
     </table>
@@ -139,10 +121,6 @@ echo ("<a href=\"https://github.com/alexsrk09/DWES/blob/main/unit3/bucles/bucles
 
     .festivosLocales {
         background-color: darksalmon;
-    }
-
-    .festivosFeria {
-        background-color: yellow;
     }
 
     .dia {
