@@ -99,10 +99,22 @@ $ficheros = array(
             "tags" => "unidad3, bucles, ejercicio5",
         ),
         "ej11" => array(
-            "titulo" => "Ejercicio 5 arrays",
+            "titulo" => "Ejercicio 1 arrays",
             "descripcion" => "Ejercicio 1 de la unidad 3 arrays",
             "enlace" => "unit3\arrays\arrays1.php",
             "tags" => "unidad3, arrays, ejercicio1",
+        ),
+        "ej12" => array(
+            "titulo" => "Ejercicio 1 formularios",
+            "descripcion" => "Ejercicio 1 de la unidad 3 formularios",
+            "enlace" => 'unit3\forms\form1\formulario1.php',
+            "tags" => "unidad3, formularios, ejercicio1",
+        ),
+        "ej13" => array(
+            "titulo" => "Ejercicio 2 formularios",
+            "descripcion" => "Ejercicio 2 de la unidad 3 formularios",
+            "enlace" => 'unit3\forms\form2\formulario1.php',
+            "tags" => "unidad3, formularios, ejercicio2",
         ),
     ),
 );
