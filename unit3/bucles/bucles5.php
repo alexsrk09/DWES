@@ -7,6 +7,14 @@
 $diaActual = date("j"); //Devuelve el día del mes actual
 $mesActual = date("n"); //Devuelve el mes actual
 $añoActual = date("Y"); //Devuelve el año actual
+if($_POST){
+    if(isset($_POST["cambiofl"])){
+        if($_POST["cambiofl"]==13) $mesVer=1;
+        else $mesVer=$_POST["cambiofl"];
+    }else $mesVer=$_POST["mes"];
+}else{
+    $mesVer = $mesActual;
+}
 $festivos = array(
     'festivosLocales'=> array(
             'fuensanta'=>mktime(0, 0, 0, 6, 8, $añoActual), //fuensanta
@@ -30,8 +38,9 @@ $festivos = array(
         )
 );
 $dias = array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"); //array con los dias de la semana
-$diasMes = cal_days_in_month(CAL_GREGORIAN, $mesActual, $añoActual); //devuelve el número de días del mes
-$Week = date("N", mktime(0, 0, 0, $mesActual, 1, $añoActual)) - 1; //Devuelve el número del día de la semana del primer día del mes
+$meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); //array con los meses del año
+$diasMes = cal_days_in_month(CAL_GREGORIAN, $mesVer, $añoActual); //devuelve el número de días del mes
+$Week = date("N", mktime(0, 0, 0, $mesVer, 1, $añoActual)) - 1; //Devuelve el número del día de la semana del primer día del mes
 $dia = 1;
 ?>
 <!DOCTYPE html>
@@ -45,6 +54,29 @@ $dia = 1;
 </head>
 
 <body>
+    <form method="post" action="bucles5.php">
+        <button type="submit" name="cambiofl" value="<?php echo $mesVer-1?>">menos</button>
+        
+        <h3><?php 
+            echo $meses[$mesVer-1];
+            ?></h3>
+        <button type="submit" name="cambiofl" value="<?php echo $mesVer+1?>">mas</button>
+
+
+        <select name="mes">
+            <?php 
+                for($i=0;$i<12;$i++){
+                    $valor=$i+1;
+                    if($i==$mesVer-1){
+                        echo "<option value='$valor' selected>$meses[$i]</option>";
+                    }else{
+                        echo "<option value='$valor'>$meses[$i]</option>";
+                    }
+                }
+            ?>
+        </select>
+        <input type="submit" name="select" value="Enviar">
+    </form>
     <table>
         <?php
 
@@ -58,16 +90,16 @@ for ($i = 0; $i < $Week; $i++) {
     echo "<td></td>";
 }
 while ($dia <= $diasMes) {
-    if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosAndalucia'])) {
+    if (in_array(mktime(0, 0, 0, $mesVer, $dia, $añoActual), $festivos['festivosAndalucia'])) {
         echo "<td class='festivosAndalucia'>" . $dia . "</td>";
     }
-    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosNacionales']) || ($dia + $Week) % 7 == 0) {
+    else if (in_array(mktime(0, 0, 0, $mesVer, $dia, $añoActual), $festivos['festivosNacionales']) || ($dia + $Week) % 7 == 0) {
         echo "<td class='festivosNacionales'>" . $dia . "</td>";
     }
-    else if (in_array(mktime(0, 0, 0, $mesActual, $dia, $añoActual), $festivos['festivosLocales'])) {
+    else if (in_array(mktime(0, 0, 0, $mesVer, $dia, $añoActual), $festivos['festivosLocales'])) {
         echo "<td class='festivosLocales'>" . $dia . "</td>";
     }
-    else if ($dia == $diaActual) {
+    else if ($dia == $diaActual && $mesVer == $mesActual) {
         echo "<td class='dia'>$dia</td>";
     }
     else
