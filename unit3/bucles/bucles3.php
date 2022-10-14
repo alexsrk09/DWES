@@ -18,9 +18,13 @@
                 echo("<tr>");
                 if($i!=$desde)echo ("<td style=\" background-color:red;\">".$i."</td>");
                 else echo ("<td style=\" background-color:red;\">"."x"."</td>");
+                $contador=0;
                 for ($j = $desde; $j <= $hasta; $j++){
                     if($i!=$desde) {
-                        if((bool)rand(0,1)==true) echo ('<td><input type="number" name="'.$i.'*'.$j.'"/></td>');
+                        if(rand(0,3)==0 && $contador<=1) {
+                            echo ('<td><input type="number" name="'.$i.'*'.$j.'"/></td>');
+                            $contador++;
+                        }
 
                         else echo ("<td>".$i*$j."</td>");
 

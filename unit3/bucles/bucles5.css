@@ -1,0 +1,29 @@
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.festivosCumple {
+    background-color: blue;
+}
+
+.festivosAndalucia {
+    background-color: Darkred;
+}
+
+.festivosNacionales {
+    background-color: red;
+}
+
+.festivosLocales {
+    background-color: darksalmon;
+}
+
+.dia {
+    background-color: lightgreen;
+}
