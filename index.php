@@ -201,4 +201,9 @@ echo ("<a href=\"https://github.com/alexsrk09/DWES\" class=\"btn btn-outline-pri
 
 </footer>
 
+<style>
+    .btn-outline-primary{
+        margin-bottom: 2%;
+    }
+</style>
 </html>

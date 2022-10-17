@@ -21,11 +21,17 @@
                 $contador=0;
                 for ($j = $desde; $j <= $hasta; $j++){
                     if($i!=$desde) {
-                        if(rand(0,3)==0 && $contador<=1) {
+                        if(rand(0,3)==0 && $contador<=1 && !$_POST) {
                             echo ('<td><input type="number" name="'.$i.'*'.$j.'"/></td>');
                             $contador++;
                         }
-
+                        else if($_POST && isset($_POST[$i.'*'.$j]) && $_POST[$i.'*'.$j]==$i*$j) {
+                            echo ('<td style=" background-color:green;">'.$i*$j.'</td>');
+                            $aciertos++;
+                        }
+                        else if($_POST && isset($_POST[$i.'*'.$j]) && $_POST[$i.'*'.$j]!=$i*$j) {
+                            echo ('<td><input type="number" name="'.$i.'*'.$j.'"/></td>');
+                        }
                         else echo ("<td>".$i*$j."</td>");
 
                     }
@@ -38,12 +44,6 @@
     <input type="submit"/>
     </form>
     <?php 
-        if($_POST){
-            foreach($_POST as $name=>$value){
-                $separado = explode("*", $name);
-                if($separado[0]*$separado[1]==$value)$aciertos++;
-            }
-        }
         echo 'aciertos: '.$aciertos;
     ?>
 </body>
