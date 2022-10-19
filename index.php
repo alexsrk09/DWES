@@ -117,6 +117,26 @@ $ficheros = array(
             "tags" => "unidad3, formularios, ejercicio2",
         ),
     ),
+    "unit4" => array(
+        "ej1" => array(
+            "titulo" => "Ejercicio 1",
+            "descripcion" => "Ejercicio 1 de la unidad 4",
+            "enlace" => "unit4/cookies/cookies1.php",
+            "tags" => "unidad4, ejercicio1",
+        ),
+        "ej2" => array(
+            "titulo" => "Ejercicio 2",
+            "descripcion" => "Ejercicio 2 de la unidad 4",
+            "enlace" => "unit4/cookies/cookies2.php",
+            "tags" => "unidad4, ejercicio2",
+        ),
+        "ej3" => array(
+            "titulo" => "Ejercicio 3",
+            "descripcion" => "Ejercicio 3 de la unidad 4",
+            "enlace" => "unit4/cookies/cookies3.php",
+            "tags" => "unidad4, ejercicio3",
+        ),
+    ),
 );
 ?>
 
@@ -145,6 +165,7 @@ $ficheros = array(
                         echo "<h5>$datos[titulo]</h5>";
                         echo "<p>$datos[descripcion]</p>";
                         echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo'<div id="salto"></div>';
 }?>
             </div>
         </div>
@@ -158,6 +179,7 @@ $ficheros = array(
                         echo "<h5>$datos[titulo]</h5>";
                         echo "<p>$datos[descripcion]</p>";
                         echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo'<div id="salto"></div>';
 }?>
             </div>
         </div>
@@ -171,6 +193,7 @@ $ficheros = array(
                         echo "<h5>$datos[titulo]</h5>";
                         echo "<p>$datos[descripcion]</p>";
                         echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo'<div id="salto"></div>';
 }?>
             </div>
         </div>
@@ -185,6 +208,21 @@ $ficheros = array(
                         echo "<h5>$datos[titulo]</h5>";
                         echo "<p>$datos[descripcion]</p>";
                         echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo'<div id="salto"></div>';
+}?>
+            </div>
+        </div>
+    </object>
+    <object class="col">
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">unit 4</h5>
+                <?php
+                    foreach ($ficheros["unit4"] as $ejercicio => $datos) {
+                        echo "<h5>$datos[titulo]</h5>";
+                        echo "<p>$datos[descripcion]</p>";
+                        echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo'<div id="salto"></div>';
 }?>
             </div>
         </div>
@@ -198,12 +236,20 @@ $ficheros = array(
 echo ("<br>");
 echo ("<a href=\"https://github.com/alexsrk09/DWES\" class=\"btn btn-outline-primary\">github</a>");
 ?>
-
+<?php
+echo ("<br>");
+echo ('<a href="proyectos\verbos irregulares\index.php" class="btn btn-outline-primary">verbos irregulares</a>');
+?>
 </footer>
 
 <style>
     .btn-outline-primary{
         margin-bottom: 2%;
+    }
+    #salto{
+        width: 100%;
+        margin-bottom: 4%;
+        border-bottom: 1px solid black;
     }
 </style>
 </html>
