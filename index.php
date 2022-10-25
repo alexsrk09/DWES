@@ -239,6 +239,7 @@ echo ("<a href=\"https://github.com/alexsrk09/DWES\" class=\"btn btn-outline-pri
 <?php
 echo ("<br>");
 echo ('<a href="proyectos\verbos irregulares\index.php" class="btn btn-outline-primary">verbos irregulares</a>');
+echo ('<a href="show_cookies.php" class="btn btn-outline-primary" target="_blank">ver cookies</a>');
 ?>
 </footer>
 

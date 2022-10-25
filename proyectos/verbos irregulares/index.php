@@ -13,7 +13,7 @@
         <label for="numeroVerbos">Número de verbos&nbsp;</label>
         <input type="number" name="numeroVervos" min="1" value="1">
         <br><br>
-        <label for="numeroCasillas">Número de casillas (minimo 1, máximo 3)</label>
+        <label for="numeroCasillas">Nivel (minimo 1, máximo 3)</label>
         <input type="number" name="numeroCasillas" min="1" max="3"value="1">
         <input type="submit" value="Enviar">
     </form>
