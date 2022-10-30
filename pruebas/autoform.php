@@ -4,7 +4,16 @@
      * @var array $autoform Array con los campos del formulario
      * campos obligatorios: type, label, name, id
      * campos opcionales: required, minlength, maxlength, min, max, placeholder, value
+     * @var array $config configuraciones del formulario
+     * campos obligatorios: action, method
+     * campos opcionales: id
      */
+    //ejemplo de config
+    /*$config = array(
+        'action' => 'pruebas/autoform.php',
+        'method' => 'post',
+        'id' => 'id_form',
+    );*/
     //ejemplo de autoformulario
     /*$autoform = array(
         array(
@@ -23,7 +32,8 @@
 <!-- link boostrap 4 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <?php
-    function autoform($autoform){
+    function autoform($autoform, $configs){
+        echo "<form action='".$configs['action']."' method='".$configs['method']."' id='".$configs['id']."'>";
         echo "<div class=\"form-group\">";
         foreach($autoform as $campo){
             echo "<label for='".$campo["type"]."'>".$campo["label"].": </label>";
@@ -53,7 +63,7 @@
             echo "<br>";
         }
         echo "</div>";
-        echo "  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-        ";
+        echo "  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>";
+        echo "</form>";
     }
 ?>
