@@ -137,6 +137,49 @@ $ficheros = array(
             "tags" => "unidad4, ejercicio3",
         ),
     ),
+    "pruebas" => array(
+        "ej1" => array(
+            "titulo" => "Autoform",
+            "descripcion" => "formulario automatico con un array",
+            "enlace" => "pruebas\autoform.php",
+            "tags" => "pruebas, autoform",
+        ),
+    ),
+    "proyectos" => array(
+        "ej1" => array(
+            "titulo" => "buscaminas1",
+            "descripcion" => "buscaminas1 en php",
+            "enlace" => "proyectos\buscaminas\index.php",
+            "tags" => "proyectos, buscaminas",
+        ),
+        "ej2" => array(
+            "titulo" => "buscaminas2",
+            "descripcion" => "buscaminas2 en php",
+            "enlace" => "proyectos\buscaminas2\index.php",
+            "tags" => "proyectos, buscaminas",
+        ),
+        "ej3" => array(
+            "titulo" => "examen con arrays y sesiones",
+            "descripcion" => "examen con arrays y sesiones",
+            "enlace" => "proyectos/examen_con_array/index.php",
+            "tags" => "proyectos, examen, arrays, sesiones",
+        ),
+        "ej4" => array(
+            "titulo" => "verbos irregulares",
+            "descripcion" => "examen de verbos en php",
+            "enlace" => "proyectos\verbos irregulares\index.php",
+            "tags" => "proyectos, verbos, irregulares",
+        ),
+    ),
+
+    "examenes" => array(
+        "ej1" => array(
+            "titulo" => "Examen 1",
+            "descripcion" => "Examen 1",
+            "enlace" => "examen\index.php",
+            "tags" => "examen",
+        ),
+    ),
 );
 ?>
 
@@ -200,7 +243,7 @@ $ficheros = array(
     </object>
     </div>
     <object class="col">
-        <div class="card" style="width: 20rem;">
+        <div class="card" style="width: 20rem; margin-bottom:4%; margin-left:4%"">
             <div class="card-body">
                 <h5 class="card-title">unit 3</h5>
                 <?php
@@ -214,7 +257,7 @@ $ficheros = array(
         </div>
     </object>
     <object class="col">
-        <div class="card" style="width: 20rem;">
+        <div class="card" style="width: 20rem; margin-bottom:4%; margin-left:4%"">
             <div class="card-body">
                 <h5 class="card-title">unit 4</h5>
                 <?php
@@ -227,6 +270,53 @@ $ficheros = array(
             </div>
         </div>
     </object>
+    <div class="col">
+    <object>
+        <div class="card" style="width: 20rem; margin-bottom:4%; margin-left:4%"">
+            <div class="card-body">
+                <h5 class="card-title">pruebas</h5>
+                <?php
+                    foreach ($ficheros["pruebas"] as $ejercicio => $datos) {
+                        echo "<h5>$datos[titulo]</h5>";
+                        echo "<p>$datos[descripcion]</p>";
+                        echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo'<div id="salto"></div>';
+}?>
+            </div>
+        </div>
+    </object>
+    <object>
+        <div class="card" style="width: 20rem; margin-bottom:4%; margin-left:4%">
+            <div class="card-body">
+                <h5 class="card-title">exámenes</h5>
+                <?php
+                    foreach ($ficheros["examenes"] as $ejercicio => $datos) {
+                        echo "<h5>$datos[titulo]</h5>";
+                        echo "<p>$datos[descripcion]</p>";
+                        echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo'<div id="salto"></div>';
+}?>
+            </div>
+        </div>
+    </object>
+    <object>
+        <div class="card" style="width: 20rem; margin-bottom:4%; margin-left:4%">
+            <div class="card-body">
+                <h5 class="card-title">proyectos</h5>
+                <?php
+                    foreach ($ficheros["proyectos"] as $ejercicio => $datos) {
+                        echo "<h5>$datos[titulo]</h5>";
+                        echo "<p>$datos[descripcion]</p>";
+                        echo "<a class=\"btn btn-outline-primary\" href='$datos[enlace]' target=\"_blank\">Enlace</a>";
+                        echo'<div id="salto"></div>';
+}?>
+            </div>
+        </div>
+    </object>
+    </div>
+    
+    
+    
     
 </div>
 </body>
@@ -235,11 +325,6 @@ $ficheros = array(
 <?php
 echo ("<br>");
 echo ("<a href=\"https://github.com/alexsrk09/DWES\" class=\"btn btn-outline-primary\">github</a>");
-?>
-<?php
-echo ("<br>");
-echo ('<a href="proyectos\verbos irregulares\index.php" class="btn btn-outline-primary">verbos irregulares</a>');
-echo ('<a href="show_cookies.php" class="btn btn-outline-primary" target="_blank">ver cookies</a>');
 ?>
 </footer>
 

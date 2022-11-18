@@ -5,6 +5,7 @@
  */
 include "lib.php";
 include "configs.php";
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +19,20 @@ include "configs.php";
 
 <body>
     <h1>Reservas</h1>
-    <form method="post" action="">
+    
         <?php
-        if (!$_POST) {
+        if(!isset($_SESSION["usuario"])){
+            echo "<form action='inicio_sesion.php' method='post'>";
+            echo "<label for='usuario'>Usuario</label>";
+            echo "<input type='text' name='usuario' id='usuario'>";
+            echo "<label for='password'>Contraseña</label>";
+            echo "<input type='password' name='password' id='password'>";
+            echo "<input type='submit' name='login' value='Login'>";
+            echo "</form>";
+        }
+        else {
+            echo "<form method=\"post\" action=\"\">";
+            if (!$_POST) {
             echo "<label for=\"equipo\">equipo: </label>";
             echo "<select name=\"equipo\" id=\"equipo\">";
             foreach ($tarifas as $key => $value) {
@@ -121,14 +133,28 @@ include "configs.php";
                             }
                         }
                         echo "<p>Asiento: $asiento, precio: " . $precio . "</p>";
+                        echo "<input type=\"hidden\" name=\"asientos[]\" value=\"$asiento-$precio-$zona\">";
+                        
                     }
                     echo "<p>Precio: $precios</p>";
+                    echo "<button type=\"submit\" name=\"parte\" value=\"guardar\">seguir comprando</button>";
                 }
             } catch (Exception $e) {
                 echo "<h1>Debes elegir al menos un asiento</h1>";
             }
 
         }
+        else if($_POST["parte"] == "guardar"){
+            $asientos = $_POST["asientos"];
+            foreach ($asientos as $asiento) {
+                if(isset($_SESSION["asientos"])){
+                    array_push($_SESSION["asientos"], $asiento);
+                }
+                else{
+                    $_SESSION["asientos"] = array($asiento);
+                }
+            }
+        }}
         ?>
     </form>
 </body>
