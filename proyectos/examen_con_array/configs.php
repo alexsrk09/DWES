@@ -5,10 +5,12 @@
 $user="user";
 $password="user";
 $abonos = 10;
-
-$conexion = new mysqli("localhost", "baloncesto", "baloncesto", "baloncesto_pokemons");
-if ($conexion->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $conexion->connect_errno . ") " . $conexion->connect_error;
+//conexion a la base de datos conPDO
+try {
+    $conexion = new PDO("mysql:host=localhost;dbname=baloncesto_pokemons", "baloncesto", "baloncesto");
+}
+catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
 }
 $tarifas = array(
     array('equipo'=>'Picapiedras', 'tarifas'=>array(
