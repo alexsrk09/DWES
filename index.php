@@ -167,8 +167,14 @@ $ficheros = array(
         "ej4" => array(
             "titulo" => "verbos irregulares",
             "descripcion" => "examen de verbos en php",
-            "enlace" => "proyectos\verbos irregulares\index.php",
+            "enlace" => "proyectos/verbos irregulares/index.php",
             "tags" => "proyectos, verbos, irregulares",
+        ),
+        "ej5" => array(
+            "titulo" => "equipos en BBDD",
+            "descripcion" => "examen de verbos en php",
+            "enlace" => "proyectos/equipos_entradas/index.php",
+            "tags" => "BBDD, equipos",
         ),
     ),
 
